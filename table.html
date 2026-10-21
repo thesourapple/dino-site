@@ -29,33 +29,25 @@
       <form action="#" method="get">
         <h3>Значение по оси OX</h3>
         <p>
-          <input type="radio" id="ox-group" name="ox" value="group" checked>
-          <label for="ox-group">Группа</label><br>
-          <input type="radio" id="ox-diet" name="ox" value="diet">
-          <label for="ox-diet">Питание</label><br>
-          <input type="radio" id="ox-period" name="ox" value="period">
-          <label for="ox-period">Период</label><br>
-          <input type="radio" id="ox-country" name="ox" value="country">
-          <label for="ox-country">Страна</label>
+          <input type="radio" id="oxGroup" name="ox" value="group" checked>
+          <label for="oxGroup">Группа</label><br>
+          <input type="radio" id="oxDiet" name="ox" value="diet">
+          <label for="oxDiet">Питание</label><br>
+          <input type="radio" id="oxPeriod" name="ox" value="period">
+          <label for="oxPeriod">Период</label><br>
+          <input type="radio" id="oxCountry" name="ox" value="country">
+          <label for="oxCountry">Страна</label>
         </p>
         <h3>Значение по оси OY</h3>
         <p>
-          <input type="checkbox" id="oy-max" name="oy-max" checked>
-          <label for="oy-max">Максимальная длина</label><br>
-          <input type="checkbox" id="oy-min" name="oy-min">
-          <label for="oy-min">Минимальная длина</label><br>
-          <input type="checkbox" id="oy-count" name="oy-count">
-          <label for="oy-count">Количество видов</label>
+          <input type="checkbox" id="oyMax" name="oyMax" checked>
+          <label for="oyMax">Максимальная длина</label><br>
+          <input type="checkbox" id="oyMin" name="oyMin">
+          <label for="oyMin">Минимальная длина</label><br>
+          <input type="checkbox" id="oyAvg" name="oyAvg">
+          <label for="oyAvg">Средняя длина</label>
         </p>
-        <p>
-          <label for="chart-type">Тип графика:</label>
-          <select id="chart-type" name="chart-type">
-            <option value="bar" selected>Гистограмма</option>
-            <option value="line">Линейный</option>
-            <option value="dots">Точечный</option>
-          </select>
-        </p>
-        <p><input type="submit" value="Построить"></p>
+        <p><input type="button" value="Построить"></p>
       </form>
       <p><i>Здесь будет график</i></p>
     </details>
@@ -64,65 +56,65 @@
       <summary><b>Фильтр</b></summary>
       <form action="#" method="get">
         <p>
-          <label for="f-name">Название:</label>
-          <input type="text" id="f-name" name="name" size="25" placeholder="например, завр">
+          <label for="fName">Название:</label>
+          <input type="text" id="fName" name="name" size="25" placeholder="например, завр">
         </p>
         <p>
-          <label for="f-group">Группа:</label>
-          <select id="f-group" name="group">
-            <option value="" selected>Любая</option>
-            <option>Теропод</option>
-            <option>Зауропод</option>
-            <option>Зауроподоморф</option>
-            <option>Цератопс</option>
-            <option>Орнитопод</option>
-            <option>Стегозавр</option>
-            <option>Анкилозавр</option>
-            <option>Пахицефалозавр</option>
+          <label for="fGroup">Группа:</label>
+          <select id="fGroup" name="group">
+            <option value="any" selected>Любая</option>
+            <option value="theropod">Теропод</option>
+            <option value="sauropod">Зауропод</option>
+            <option value="sauropodomorph">Зауроподоморф</option>
+            <option value="ceratopsian">Цератопс</option>
+            <option value="ornithopod">Орнитопод</option>
+            <option value="stegosaur">Стегозавр</option>
+            <option value="ankylosaur">Анкилозавр</option>
+            <option value="pachycephalosaur">Пахицефалозавр</option>
           </select>
         </p>
         <p>
           Питание:
-          <input type="checkbox" id="f-pred" name="diet" value="Хищник">
-          <label for="f-pred">Хищник</label>
-          <input type="checkbox" id="f-herb" name="diet" value="Травоядный">
-          <label for="f-herb">Травоядный</label>
-          <input type="checkbox" id="f-omni" name="diet" value="Всеядный">
-          <label for="f-omni">Всеядный</label>
+          <input type="checkbox" id="fPred" name="diet" value="predator">
+          <label for="fPred">Хищник</label>
+          <input type="checkbox" id="fHerb" name="diet" value="herbivore">
+          <label for="fHerb">Травоядный</label>
+          <input type="checkbox" id="fOmni" name="diet" value="omnivore">
+          <label for="fOmni">Всеядный</label>
         </p>
         <p>
-          <label for="f-period">Период:</label>
-          <select id="f-period" name="period">
-            <option value="" selected>Любой</option>
-            <option>Триасовый</option>
-            <option>Юрский</option>
-            <option>Меловой</option>
+          <label for="fPeriod">Период:</label>
+          <select id="fPeriod" name="period">
+            <option value="any" selected>Любой</option>
+            <option value="triassic">Триасовый</option>
+            <option value="jurassic">Юрский</option>
+            <option value="cretaceous">Меловой</option>
           </select>
         </p>
         <p>
-          <label for="f-country">Страна:</label>
-          <input type="text" id="f-country" name="country" size="25">
+          <label for="fCountry">Страна:</label>
+          <input type="text" id="fCountry" name="country" size="25">
         </p>
         <p>
-          <label for="f-year-from">Год описания: от</label>
-          <input type="number" id="f-year-from" name="year-from" min="1800" max="2026">
-          <label for="f-year-to">до</label>
-          <input type="number" id="f-year-to" name="year-to" min="1800" max="2026">
+          <label for="fYearFrom">Год описания: от</label>
+          <input type="number" id="fYearFrom" name="yearFrom" min="1800" max="2026">
+          <label for="fYearTo">до</label>
+          <input type="number" id="fYearTo" name="yearTo" min="1800" max="2026">
         </p>
         <p>
-          <label for="f-len-from">Длина, м: от</label>
-          <input type="number" id="f-len-from" name="len-from" min="0" step="0.1">
-          <label for="f-len-to">до</label>
-          <input type="number" id="f-len-to" name="len-to" min="0" step="0.1">
+          <label for="fLenFrom">Длина, м: от</label>
+          <input type="number" id="fLenFrom" name="lenFrom" min="0" max="40" step="0.1">
+          <label for="fLenTo">до</label>
+          <input type="number" id="fLenTo" name="lenTo" min="0" max="40" step="0.1">
         </p>
         <p>
-          <label for="f-mass-from">Вес, кг: от</label>
-          <input type="number" id="f-mass-from" name="mass-from" min="0">
-          <label for="f-mass-to">до</label>
-          <input type="number" id="f-mass-to" name="mass-to" min="0">
+          <label for="fMassFrom">Вес, кг: от</label>
+          <input type="number" id="fMassFrom" name="massFrom" min="0" max="80000">
+          <label for="fMassTo">до</label>
+          <input type="number" id="fMassTo" name="massTo" min="0" max="80000">
         </p>
         <p>
-          <input type="submit" value="Найти">
+          <input type="button" value="Найти">
           <input type="reset" value="Очистить фильтры">
         </p>
       </form>
@@ -180,7 +172,7 @@
           <input type="checkbox" id="desc3" name="desc3">
         </p>
         <p>
-          <input type="submit" value="Сортировать">
+          <input type="button" value="Сортировать">
           <input type="reset" value="Сбросить сортировку">
         </p>
       </form>
@@ -202,78 +194,726 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Тираннозавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>США</td><td align="right">1905</td><td align="right">12.3</td><td align="right">8400</td></tr>
-        <tr><td>Трицератопс</td><td>Цератопс</td><td>Травоядный</td><td>Меловой</td><td>США</td><td align="right">1889</td><td align="right">9</td><td align="right">6000</td></tr>
-        <tr><td>Велоцираптор</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Монголия</td><td align="right">1924</td><td align="right">1.8</td><td align="right">15</td></tr>
-        <tr><td>Стегозавр</td><td>Стегозавр</td><td>Травоядный</td><td>Юрский</td><td>США</td><td align="right">1877</td><td align="right">9</td><td align="right">5000</td></tr>
-        <tr><td>Брахиозавр</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>США</td><td align="right">1903</td><td align="right">22</td><td align="right">40000</td></tr>
-        <tr><td>Диплодок</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>США</td><td align="right">1878</td><td align="right">26</td><td align="right">15000</td></tr>
-        <tr><td>Спинозавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Египет</td><td align="right">1915</td><td align="right">15</td><td align="right">7400</td></tr>
-        <tr><td>Аллозавр</td><td>Теропод</td><td>Хищник</td><td>Юрский</td><td>США</td><td align="right">1877</td><td align="right">9.5</td><td align="right">2300</td></tr>
-        <tr><td>Анкилозавр</td><td>Анкилозавр</td><td>Травоядный</td><td>Меловой</td><td>США</td><td align="right">1908</td><td align="right">8</td><td align="right">6000</td></tr>
-        <tr><td>Паразауролоф</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Канада</td><td align="right">1922</td><td align="right">9.5</td><td align="right">2500</td></tr>
-        <tr><td>Игуанодон</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Великобритания</td><td align="right">1825</td><td align="right">10</td><td align="right">3500</td></tr>
-        <tr><td>Мегалозавр</td><td>Теропод</td><td>Хищник</td><td>Юрский</td><td>Великобритания</td><td align="right">1824</td><td align="right">6</td><td align="right">700</td></tr>
-        <tr><td>Аргентинозавр</td><td>Зауропод</td><td>Травоядный</td><td>Меловой</td><td>Аргентина</td><td align="right">1993</td><td align="right">35</td><td align="right">70000</td></tr>
-        <tr><td>Гиганотозавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Аргентина</td><td align="right">1995</td><td align="right">12.5</td><td align="right">7000</td></tr>
-        <tr><td>Карнотавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Аргентина</td><td align="right">1985</td><td align="right">8</td><td align="right">1500</td></tr>
-        <tr><td>Пахицефалозавр</td><td>Пахицефалозавр</td><td>Травоядный</td><td>Меловой</td><td>США</td><td align="right">1943</td><td align="right">4.5</td><td align="right">450</td></tr>
-        <tr><td>Протоцератопс</td><td>Цератопс</td><td>Травоядный</td><td>Меловой</td><td>Монголия</td><td align="right">1923</td><td align="right">2</td><td align="right">80</td></tr>
-        <tr><td>Овираптор</td><td>Теропод</td><td>Всеядный</td><td>Меловой</td><td>Монголия</td><td align="right">1924</td><td align="right">1.6</td><td align="right">30</td></tr>
-        <tr><td>Галлимим</td><td>Теропод</td><td>Всеядный</td><td>Меловой</td><td>Монголия</td><td align="right">1972</td><td align="right">6</td><td align="right">440</td></tr>
-        <tr><td>Теризинозавр</td><td>Теропод</td><td>Травоядный</td><td>Меловой</td><td>Монголия</td><td align="right">1954</td><td align="right">10</td><td align="right">5000</td></tr>
-        <tr><td>Дейнохейр</td><td>Теропод</td><td>Всеядный</td><td>Меловой</td><td>Монголия</td><td align="right">1970</td><td align="right">11</td><td align="right">6400</td></tr>
-        <tr><td>Тарбозавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Монголия</td><td align="right">1955</td><td align="right">10</td><td align="right">5000</td></tr>
-        <tr><td>Пситтакозавр</td><td>Цератопс</td><td>Травоядный</td><td>Меловой</td><td>Монголия</td><td align="right">1923</td><td align="right">2</td><td align="right">20</td></tr>
-        <tr><td>Компсогнат</td><td>Теропод</td><td>Хищник</td><td>Юрский</td><td>Германия</td><td align="right">1859</td><td align="right">1</td><td align="right">3</td></tr>
-        <tr><td>Платеозавр</td><td>Зауроподоморф</td><td>Травоядный</td><td>Триасовый</td><td>Германия</td><td align="right">1837</td><td align="right">8</td><td align="right">4000</td></tr>
-        <tr><td>Европазавр</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>Германия</td><td align="right">2006</td><td align="right">6</td><td align="right">800</td></tr>
-        <tr><td>Целофизис</td><td>Теропод</td><td>Хищник</td><td>Триасовый</td><td>США</td><td align="right">1889</td><td align="right">3</td><td align="right">20</td></tr>
-        <tr><td>Эораптор</td><td>Зауроподоморф</td><td>Всеядный</td><td>Триасовый</td><td>Аргентина</td><td align="right">1993</td><td align="right">1</td><td align="right">10</td></tr>
-        <tr><td>Дилофозавр</td><td>Теропод</td><td>Хищник</td><td>Юрский</td><td>США</td><td align="right">1954</td><td align="right">7</td><td align="right">400</td></tr>
-        <tr><td>Цератозавр</td><td>Теропод</td><td>Хищник</td><td>Юрский</td><td>США</td><td align="right">1884</td><td align="right">6</td><td align="right">700</td></tr>
-        <tr><td>Апатозавр</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>США</td><td align="right">1877</td><td align="right">22</td><td align="right">20000</td></tr>
-        <tr><td>Бронтозавр</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>США</td><td align="right">1879</td><td align="right">22</td><td align="right">15000</td></tr>
-        <tr><td>Камаразавр</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>США</td><td align="right">1877</td><td align="right">18</td><td align="right">18000</td></tr>
-        <tr><td>Мамэньсизавр</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>Китай</td><td align="right">1954</td><td align="right">26</td><td align="right">25000</td></tr>
-        <tr><td>Туоцзянозавр</td><td>Стегозавр</td><td>Травоядный</td><td>Юрский</td><td>Китай</td><td align="right">1977</td><td align="right">7</td><td align="right">2800</td></tr>
-        <tr><td>Синраптор</td><td>Теропод</td><td>Хищник</td><td>Юрский</td><td>Китай</td><td align="right">1994</td><td align="right">7.6</td><td align="right">1700</td></tr>
-        <tr><td>Синозавроптерикс</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Китай</td><td align="right">1996</td><td align="right">1</td><td align="right">1</td></tr>
-        <tr><td>Юттиранн</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Китай</td><td align="right">2012</td><td align="right">9</td><td align="right">1400</td></tr>
-        <tr><td>Микрораптор</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Китай</td><td align="right">2000</td><td align="right">0.8</td><td align="right">1</td></tr>
-        <tr><td>Цинтаозавр</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Китай</td><td align="right">1958</td><td align="right">8.3</td><td align="right">3000</td></tr>
-        <tr><td>Мутабуррозавр</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Австралия</td><td align="right">1981</td><td align="right">7</td><td align="right">2800</td></tr>
-        <tr><td>Австраловенатор</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Австралия</td><td align="right">2009</td><td align="right">6</td><td align="right">500</td></tr>
-        <tr><td>Минми</td><td>Анкилозавр</td><td>Травоядный</td><td>Меловой</td><td>Австралия</td><td align="right">1980</td><td align="right">3</td><td align="right">300</td></tr>
-        <tr><td>Кентрозавр</td><td>Стегозавр</td><td>Травоядный</td><td>Юрский</td><td>Танзания</td><td align="right">1915</td><td align="right">4.5</td><td align="right">1000</td></tr>
-        <tr><td>Жирафатитан</td><td>Зауропод</td><td>Травоядный</td><td>Юрский</td><td>Танзания</td><td align="right">1988</td><td align="right">22</td><td align="right">30000</td></tr>
-        <tr><td>Нигерзавр</td><td>Зауропод</td><td>Травоядный</td><td>Меловой</td><td>Нигер</td><td align="right">1999</td><td align="right">9</td><td align="right">4000</td></tr>
-        <tr><td>Сухомим</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Нигер</td><td align="right">1998</td><td align="right">10</td><td align="right">3000</td></tr>
-        <tr><td>Уранозавр</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Нигер</td><td align="right">1976</td><td align="right">8</td><td align="right">2000</td></tr>
-        <tr><td>Кархародонтозавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Египет</td><td align="right">1931</td><td align="right">12</td><td align="right">6500</td></tr>
-        <tr><td>Барионикс</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Великобритания</td><td align="right">1986</td><td align="right">9</td><td align="right">1700</td></tr>
-        <tr><td>Гипсилофодон</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Великобритания</td><td align="right">1869</td><td align="right">1.8</td><td align="right">20</td></tr>
-        <tr><td>Эдмонтозавр</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Канада</td><td align="right">1917</td><td align="right">12</td><td align="right">5600</td></tr>
-        <tr><td>Стиракозавр</td><td>Цератопс</td><td>Травоядный</td><td>Меловой</td><td>Канада</td><td align="right">1913</td><td align="right">5.5</td><td align="right">2700</td></tr>
-        <tr><td>Альбертозавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Канада</td><td align="right">1905</td><td align="right">9</td><td align="right">2000</td></tr>
-        <tr><td>Эуоплоцефал</td><td>Анкилозавр</td><td>Травоядный</td><td>Меловой</td><td>Канада</td><td align="right">1910</td><td align="right">6</td><td align="right">2300</td></tr>
-        <tr><td>Хасмозавр</td><td>Цератопс</td><td>Травоядный</td><td>Меловой</td><td>Канада</td><td align="right">1914</td><td align="right">4.8</td><td align="right">2000</td></tr>
-        <tr><td>Ламбеозавр</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Канада</td><td align="right">1923</td><td align="right">9.5</td><td align="right">3300</td></tr>
-        <tr><td>Майазавра</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>США</td><td align="right">1979</td><td align="right">9</td><td align="right">3000</td></tr>
-        <tr><td>Дейноних</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>США</td><td align="right">1969</td><td align="right">3.4</td><td align="right">75</td></tr>
-        <tr><td>Ютараптор</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>США</td><td align="right">1993</td><td align="right">6</td><td align="right">500</td></tr>
-        <tr><td>Троодон</td><td>Теропод</td><td>Всеядный</td><td>Меловой</td><td>США</td><td align="right">1856</td><td align="right">2.4</td><td align="right">50</td></tr>
-        <tr><td>Нодозавр</td><td>Анкилозавр</td><td>Травоядный</td><td>Меловой</td><td>США</td><td align="right">1889</td><td align="right">6</td><td align="right">3500</td></tr>
-        <tr><td>Олоротитан</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Россия</td><td align="right">2003</td><td align="right">8</td><td align="right">3000</td></tr>
-        <tr><td>Амурозавр</td><td>Орнитопод</td><td>Травоядный</td><td>Меловой</td><td>Россия</td><td align="right">1991</td><td align="right">8</td><td align="right">2500</td></tr>
-        <tr><td>Сальтазавр</td><td>Зауропод</td><td>Травоядный</td><td>Меловой</td><td>Аргентина</td><td align="right">1980</td><td align="right">12</td><td align="right">7000</td></tr>
-        <tr><td>Амаргазавр</td><td>Зауропод</td><td>Травоядный</td><td>Меловой</td><td>Аргентина</td><td align="right">1991</td><td align="right">10</td><td align="right">2600</td></tr>
-        <tr><td>Патаготитан</td><td>Зауропод</td><td>Травоядный</td><td>Меловой</td><td>Аргентина</td><td align="right">2017</td><td align="right">37</td><td align="right">57000</td></tr>
-        <tr><td>Мапузавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Аргентина</td><td align="right">2006</td><td align="right">11.5</td><td align="right">5000</td></tr>
-        <tr><td>Ирритатор</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Бразилия</td><td align="right">1996</td><td align="right">7</td><td align="right">1000</td></tr>
-        <tr><td>Массоспондил</td><td>Зауроподоморф</td><td>Травоядный</td><td>Юрский</td><td>ЮАР</td><td align="right">1854</td><td align="right">5</td><td align="right">500</td></tr>
-        <tr><td>Раджазавр</td><td>Теропод</td><td>Хищник</td><td>Меловой</td><td>Индия</td><td align="right">2003</td><td align="right">9</td><td align="right">3000</td></tr>
-        <tr><td>Изизавр</td><td>Зауропод</td><td>Травоядный</td><td>Меловой</td><td>Индия</td><td align="right">1997</td><td align="right">18</td><td align="right">15000</td></tr>
+        <tr>
+          <td>Тираннозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1905</td>
+          <td align="right">12.3</td>
+          <td align="right">8400</td>
+        </tr>
+        <tr>
+          <td>Трицератопс</td>
+          <td>Цератопс</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1889</td>
+          <td align="right">9</td>
+          <td align="right">6000</td>
+        </tr>
+        <tr>
+          <td>Велоцираптор</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1924</td>
+          <td align="right">1.8</td>
+          <td align="right">15</td>
+        </tr>
+        <tr>
+          <td>Стегозавр</td>
+          <td>Стегозавр</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1877</td>
+          <td align="right">9</td>
+          <td align="right">5000</td>
+        </tr>
+        <tr>
+          <td>Брахиозавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1903</td>
+          <td align="right">22</td>
+          <td align="right">40000</td>
+        </tr>
+        <tr>
+          <td>Диплодок</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1878</td>
+          <td align="right">26</td>
+          <td align="right">15000</td>
+        </tr>
+        <tr>
+          <td>Спинозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Египет</td>
+          <td align="right">1915</td>
+          <td align="right">15</td>
+          <td align="right">7400</td>
+        </tr>
+        <tr>
+          <td>Аллозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1877</td>
+          <td align="right">9.5</td>
+          <td align="right">2300</td>
+        </tr>
+        <tr>
+          <td>Анкилозавр</td>
+          <td>Анкилозавр</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1908</td>
+          <td align="right">8</td>
+          <td align="right">6000</td>
+        </tr>
+        <tr>
+          <td>Паразауролоф</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1922</td>
+          <td align="right">9.5</td>
+          <td align="right">2500</td>
+        </tr>
+        <tr>
+          <td>Игуанодон</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Великобритания</td>
+          <td align="right">1825</td>
+          <td align="right">10</td>
+          <td align="right">3500</td>
+        </tr>
+        <tr>
+          <td>Мегалозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Юрский</td>
+          <td>Великобритания</td>
+          <td align="right">1824</td>
+          <td align="right">6</td>
+          <td align="right">700</td>
+        </tr>
+        <tr>
+          <td>Аргентинозавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">1993</td>
+          <td align="right">35</td>
+          <td align="right">70000</td>
+        </tr>
+        <tr>
+          <td>Гиганотозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">1995</td>
+          <td align="right">12.5</td>
+          <td align="right">7000</td>
+        </tr>
+        <tr>
+          <td>Карнотавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">1985</td>
+          <td align="right">8</td>
+          <td align="right">1500</td>
+        </tr>
+        <tr>
+          <td>Пахицефалозавр</td>
+          <td>Пахицефалозавр</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1943</td>
+          <td align="right">4.5</td>
+          <td align="right">450</td>
+        </tr>
+        <tr>
+          <td>Протоцератопс</td>
+          <td>Цератопс</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1923</td>
+          <td align="right">2</td>
+          <td align="right">80</td>
+        </tr>
+        <tr>
+          <td>Овираптор</td>
+          <td>Теропод</td>
+          <td>Всеядный</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1924</td>
+          <td align="right">1.6</td>
+          <td align="right">30</td>
+        </tr>
+        <tr>
+          <td>Галлимим</td>
+          <td>Теропод</td>
+          <td>Всеядный</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1972</td>
+          <td align="right">6</td>
+          <td align="right">440</td>
+        </tr>
+        <tr>
+          <td>Теризинозавр</td>
+          <td>Теропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1954</td>
+          <td align="right">10</td>
+          <td align="right">5000</td>
+        </tr>
+        <tr>
+          <td>Дейнохейр</td>
+          <td>Теропод</td>
+          <td>Всеядный</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1970</td>
+          <td align="right">11</td>
+          <td align="right">6400</td>
+        </tr>
+        <tr>
+          <td>Тарбозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1955</td>
+          <td align="right">10</td>
+          <td align="right">5000</td>
+        </tr>
+        <tr>
+          <td>Пситтакозавр</td>
+          <td>Цератопс</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Монголия</td>
+          <td align="right">1923</td>
+          <td align="right">2</td>
+          <td align="right">20</td>
+        </tr>
+        <tr>
+          <td>Компсогнат</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Юрский</td>
+          <td>Германия</td>
+          <td align="right">1859</td>
+          <td align="right">1</td>
+          <td align="right">3</td>
+        </tr>
+        <tr>
+          <td>Платеозавр</td>
+          <td>Зауроподоморф</td>
+          <td>Травоядный</td>
+          <td>Триасовый</td>
+          <td>Германия</td>
+          <td align="right">1837</td>
+          <td align="right">8</td>
+          <td align="right">4000</td>
+        </tr>
+        <tr>
+          <td>Европазавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>Германия</td>
+          <td align="right">2006</td>
+          <td align="right">6</td>
+          <td align="right">800</td>
+        </tr>
+        <tr>
+          <td>Целофизис</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Триасовый</td>
+          <td>США</td>
+          <td align="right">1889</td>
+          <td align="right">3</td>
+          <td align="right">20</td>
+        </tr>
+        <tr>
+          <td>Эораптор</td>
+          <td>Зауроподоморф</td>
+          <td>Всеядный</td>
+          <td>Триасовый</td>
+          <td>Аргентина</td>
+          <td align="right">1993</td>
+          <td align="right">1</td>
+          <td align="right">10</td>
+        </tr>
+        <tr>
+          <td>Дилофозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1954</td>
+          <td align="right">7</td>
+          <td align="right">400</td>
+        </tr>
+        <tr>
+          <td>Цератозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1884</td>
+          <td align="right">6</td>
+          <td align="right">700</td>
+        </tr>
+        <tr>
+          <td>Апатозавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1877</td>
+          <td align="right">22</td>
+          <td align="right">20000</td>
+        </tr>
+        <tr>
+          <td>Бронтозавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1879</td>
+          <td align="right">22</td>
+          <td align="right">15000</td>
+        </tr>
+        <tr>
+          <td>Камаразавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>США</td>
+          <td align="right">1877</td>
+          <td align="right">18</td>
+          <td align="right">18000</td>
+        </tr>
+        <tr>
+          <td>Мамэньсизавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>Китай</td>
+          <td align="right">1954</td>
+          <td align="right">26</td>
+          <td align="right">25000</td>
+        </tr>
+        <tr>
+          <td>Туоцзянозавр</td>
+          <td>Стегозавр</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>Китай</td>
+          <td align="right">1977</td>
+          <td align="right">7</td>
+          <td align="right">2800</td>
+        </tr>
+        <tr>
+          <td>Синраптор</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Юрский</td>
+          <td>Китай</td>
+          <td align="right">1994</td>
+          <td align="right">7.6</td>
+          <td align="right">1700</td>
+        </tr>
+        <tr>
+          <td>Синозавроптерикс</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Китай</td>
+          <td align="right">1996</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td>Юттиранн</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Китай</td>
+          <td align="right">2012</td>
+          <td align="right">9</td>
+          <td align="right">1400</td>
+        </tr>
+        <tr>
+          <td>Микрораптор</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Китай</td>
+          <td align="right">2000</td>
+          <td align="right">0.8</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td>Цинтаозавр</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Китай</td>
+          <td align="right">1958</td>
+          <td align="right">8.3</td>
+          <td align="right">3000</td>
+        </tr>
+        <tr>
+          <td>Мутабуррозавр</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Австралия</td>
+          <td align="right">1981</td>
+          <td align="right">7</td>
+          <td align="right">2800</td>
+        </tr>
+        <tr>
+          <td>Австраловенатор</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Австралия</td>
+          <td align="right">2009</td>
+          <td align="right">6</td>
+          <td align="right">500</td>
+        </tr>
+        <tr>
+          <td>Минми</td>
+          <td>Анкилозавр</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Австралия</td>
+          <td align="right">1980</td>
+          <td align="right">3</td>
+          <td align="right">300</td>
+        </tr>
+        <tr>
+          <td>Кентрозавр</td>
+          <td>Стегозавр</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>Танзания</td>
+          <td align="right">1915</td>
+          <td align="right">4.5</td>
+          <td align="right">1000</td>
+        </tr>
+        <tr>
+          <td>Жирафатитан</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>Танзания</td>
+          <td align="right">1988</td>
+          <td align="right">22</td>
+          <td align="right">30000</td>
+        </tr>
+        <tr>
+          <td>Нигерзавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Нигер</td>
+          <td align="right">1999</td>
+          <td align="right">9</td>
+          <td align="right">4000</td>
+        </tr>
+        <tr>
+          <td>Сухомим</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Нигер</td>
+          <td align="right">1998</td>
+          <td align="right">10</td>
+          <td align="right">3000</td>
+        </tr>
+        <tr>
+          <td>Уранозавр</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Нигер</td>
+          <td align="right">1976</td>
+          <td align="right">8</td>
+          <td align="right">2000</td>
+        </tr>
+        <tr>
+          <td>Кархародонтозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Египет</td>
+          <td align="right">1931</td>
+          <td align="right">12</td>
+          <td align="right">6500</td>
+        </tr>
+        <tr>
+          <td>Барионикс</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Великобритания</td>
+          <td align="right">1986</td>
+          <td align="right">9</td>
+          <td align="right">1700</td>
+        </tr>
+        <tr>
+          <td>Гипсилофодон</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Великобритания</td>
+          <td align="right">1869</td>
+          <td align="right">1.8</td>
+          <td align="right">20</td>
+        </tr>
+        <tr>
+          <td>Эдмонтозавр</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1917</td>
+          <td align="right">12</td>
+          <td align="right">5600</td>
+        </tr>
+        <tr>
+          <td>Стиракозавр</td>
+          <td>Цератопс</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1913</td>
+          <td align="right">5.5</td>
+          <td align="right">2700</td>
+        </tr>
+        <tr>
+          <td>Альбертозавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1905</td>
+          <td align="right">9</td>
+          <td align="right">2000</td>
+        </tr>
+        <tr>
+          <td>Эуоплоцефал</td>
+          <td>Анкилозавр</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1910</td>
+          <td align="right">6</td>
+          <td align="right">2300</td>
+        </tr>
+        <tr>
+          <td>Хасмозавр</td>
+          <td>Цератопс</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1914</td>
+          <td align="right">4.8</td>
+          <td align="right">2000</td>
+        </tr>
+        <tr>
+          <td>Ламбеозавр</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Канада</td>
+          <td align="right">1923</td>
+          <td align="right">9.5</td>
+          <td align="right">3300</td>
+        </tr>
+        <tr>
+          <td>Майазавра</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1979</td>
+          <td align="right">9</td>
+          <td align="right">3000</td>
+        </tr>
+        <tr>
+          <td>Дейноних</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1969</td>
+          <td align="right">3.4</td>
+          <td align="right">75</td>
+        </tr>
+        <tr>
+          <td>Ютараптор</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1993</td>
+          <td align="right">6</td>
+          <td align="right">500</td>
+        </tr>
+        <tr>
+          <td>Троодон</td>
+          <td>Теропод</td>
+          <td>Всеядный</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1856</td>
+          <td align="right">2.4</td>
+          <td align="right">50</td>
+        </tr>
+        <tr>
+          <td>Нодозавр</td>
+          <td>Анкилозавр</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>США</td>
+          <td align="right">1889</td>
+          <td align="right">6</td>
+          <td align="right">3500</td>
+        </tr>
+        <tr>
+          <td>Олоротитан</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Россия</td>
+          <td align="right">2003</td>
+          <td align="right">8</td>
+          <td align="right">3000</td>
+        </tr>
+        <tr>
+          <td>Амурозавр</td>
+          <td>Орнитопод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Россия</td>
+          <td align="right">1991</td>
+          <td align="right">8</td>
+          <td align="right">2500</td>
+        </tr>
+        <tr>
+          <td>Сальтазавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">1980</td>
+          <td align="right">12</td>
+          <td align="right">7000</td>
+        </tr>
+        <tr>
+          <td>Амаргазавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">1991</td>
+          <td align="right">10</td>
+          <td align="right">2600</td>
+        </tr>
+        <tr>
+          <td>Патаготитан</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">2017</td>
+          <td align="right">37</td>
+          <td align="right">57000</td>
+        </tr>
+        <tr>
+          <td>Мапузавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Аргентина</td>
+          <td align="right">2006</td>
+          <td align="right">11.5</td>
+          <td align="right">5000</td>
+        </tr>
+        <tr>
+          <td>Ирритатор</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Бразилия</td>
+          <td align="right">1996</td>
+          <td align="right">7</td>
+          <td align="right">1000</td>
+        </tr>
+        <tr>
+          <td>Массоспондил</td>
+          <td>Зауроподоморф</td>
+          <td>Травоядный</td>
+          <td>Юрский</td>
+          <td>ЮАР</td>
+          <td align="right">1854</td>
+          <td align="right">5</td>
+          <td align="right">500</td>
+        </tr>
+        <tr>
+          <td>Раджазавр</td>
+          <td>Теропод</td>
+          <td>Хищник</td>
+          <td>Меловой</td>
+          <td>Индия</td>
+          <td align="right">2003</td>
+          <td align="right">9</td>
+          <td align="right">3000</td>
+        </tr>
+        <tr>
+          <td>Изизавр</td>
+          <td>Зауропод</td>
+          <td>Травоядный</td>
+          <td>Меловой</td>
+          <td>Индия</td>
+          <td align="right">1997</td>
+          <td align="right">18</td>
+          <td align="right">15000</td>
+        </tr>
       </tbody>
     </table>
 
